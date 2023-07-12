@@ -1,0 +1,45 @@
+function DetailPanelContent({ row: rowProp }) {
+    return (
+      <Stack
+        sx={{ py: 2, height: '100%', boxSizing: 'border-box' }}
+        direction="column"
+      >
+        <Paper sx={{ flex: 1, mx: 'auto', width: '90%', p: 1 }}>
+          <Stack direction="column" spacing={1} sx={{ height: 1 }}>
+            <Typography variant="h6">{`Order #${rowProp.transactionHash}`}</Typography>
+            <Grid container>
+              <Grid item md={6}>
+                <Typography variant="body2" color="textSecondary">
+                  Contract Address
+                </Typography>
+                <Typography variant="body1">{rowProp.contractAddress}</Typography>
+              </Grid>
+              <Grid item md={6}>
+                <Typography variant="body2" align="right" color="textSecondary">
+                  Transaction Index
+                </Typography>
+                <Typography variant="body1" align="right">
+                  {rowProp.address}
+                </Typography>
+                <Typography variant="body1" align="right">
+                    {rowProp.transactionIndex}
+                </Typography>
+                <Typography variant="body1" align="right">
+                    Block Number
+                </Typography>
+                <Typography variant="body1" align="right">
+                    {rowProp.blockNumber}
+                </Typography>
+                <Typography variant="body1" align="right">
+                    Gas used
+                </Typography>
+                <Typography variant="body1" align="right">
+                    {rowProp.gasUsed}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Stack>
+        </Paper>
+      </Stack>
+    );
+  }

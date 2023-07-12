@@ -1,0 +1,18 @@
+
+export const handleEvent = async (
+    params, // GridRowParams
+    event, // MuiEvent<React.MouseEvent<HTMLElement>>
+    details, // GridCallbackDetails
+  ) => {
+    console.log("modal called");
+
+  
+    try {
+      let currentTransaction= await  transactionReceipt(params.row.hash);
+      return currentTransaction;
+    } catch (error) {
+      console.log("error while getting ", );
+    }
+    
+    
+  };
